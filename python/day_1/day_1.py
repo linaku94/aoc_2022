@@ -1,3 +1,4 @@
+
 calories = [0]
 with open('input.txt', 'r') as file:
     for line in file.readlines():
@@ -8,5 +9,4 @@ with open('input.txt', 'r') as file:
 
 print(f'maximum number of calories: {max(calories)}')
 calories.sort()
-print(calories[-3:])
 print(f'calories of top 3 elves: {sum(calories[-3:])}')
