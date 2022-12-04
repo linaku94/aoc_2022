@@ -8,7 +8,7 @@ triple_items = []
 with open('input.txt', 'r') as file:
     for k, line in enumerate(file.readlines()):
         if (k>0) & (k%3==0):
-            item = items[0].intersection(items[1],items[2])
+            item = items[0].intersection(*items[1:])
             triple_items.append(item.pop())
             items = []
         line = line.rstrip()
