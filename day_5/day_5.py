@@ -11,6 +11,5 @@ with open('input.txt', 'r') as file:
         ### remove last inversion for part 2
         cargo_state[start], cargo_state[end] = cargo_state[start][:-number], cargo_state[end] + cargo_state[start][-number:]#[::-1]
         
-
-res = [cargo_state[i][-1] for i in range(9)]
+        
 print(''.join([cargo_state[i][-1] for i in range(9)]))
