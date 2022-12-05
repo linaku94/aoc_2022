@@ -14,4 +14,4 @@ with open('input.txt', 'r') as file:
             overlapping_pairs+=1
 
 print(f'redundant paris: {redundant_pairs}')  
-print(f'redundant paris: {overlapping_pairs}')      
+print(f'overlapping paris: {overlapping_pairs}')      
