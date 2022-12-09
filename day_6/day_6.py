@@ -1,5 +1,5 @@
 with open('input.txt', 'r') as file:
-    message = file.readlines()[0].strip()
+    message = file.read().strip()
 
 length = 14 # 4
 for i in range(len(message)):

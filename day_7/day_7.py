@@ -13,14 +13,12 @@ with open('input.txt', 'r') as file:
         l = line.rstrip().split()
         if l[0] == "$":
             if l[1] == 'cd':
-                if l[2] == '/':
+                if l[2] == '/' or current_node == 0:
                     current_node = 0
                 if l[2] != '..':
                     for child_node in file_tree.children(current_node):
                        if child_node.tag == l[2]:
                         current_node = child_node.identifier
-                elif current_node == 0:
-                    pass
                 else:
                     current_node = file_tree.parent(current_node).identifier
         elif l[0] == 'dir':
