@@ -5,19 +5,13 @@ class alternate_list():
         self.a = a
     
     def __lt__(self, b):
-        if self.check_pair(self.a,b()) is True:
-            return True
-        return False
+        return True if self.check_pair(self.a,b()) else False
     
     def __gt__(self,b):
-        if self.check_pair(self.a,b()) is True:
-            return False
-        return True
+        return False if self.check_pair(self.a,b()) else True
     
     def __eq__(self, b):
-        if self.check_pair(self.a,b()) is None:
-            return True
-        return False
+        return True if self.check_pair(self.a,b()) is None else False
 
     def __iter__(self):
         return iter(self.a)
@@ -41,8 +35,7 @@ class alternate_list():
                     contr = alternate_list.check_pair(p0[i],p1[i])
                     if contr != None:
                         return contr                    
-                    else:
-                        continue
+                    continue
                 if p0[i]>p1[i]:
                     return False
                 elif p0[i]<p1[i]:
