@@ -9,8 +9,14 @@ class alternate_list():
     
     def __gt__(self,b):
         return False if self.check_pair(self.a,b()) else True
+
+    def __le__(self,b):
+        return True if self<b or self==b else False
     
-    def __eq__(self, b):
+    def __ge__(self,b):
+        return True if self>b or self==b else False
+    
+    def __eq__(self,b):
         return True if self.check_pair(self.a,b()) is None else False
 
     def __iter__(self):
@@ -44,19 +50,15 @@ class alternate_list():
                 return False
         return None if len(p0)==len(p1) else True
 
-pairs = []
 indices = []
 lists = []
 with open('input.txt', 'r') as file:
     for i,line in enumerate(file.readlines()):
         if line == '\n':
-            A = alternate_list.check_pair(*pairs)
-            if A is None or A is True:
+            if lists[-1]>=lists[-2]:
                 indices.append((i+1)//3)
-            pairs = []
         else:
             line = literal_eval(line.strip())
-            pairs.append(line)
             lists.append(alternate_list(line))
 
 print(f"part 1 sum of correct pair indices: {sum(indices)}")
