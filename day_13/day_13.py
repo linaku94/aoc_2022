@@ -1,6 +1,6 @@
 from ast import literal_eval
 
-class alternate_list():
+class alternate_list(list):
     def __init__(self, a):
         self.a = a
     
@@ -18,12 +18,6 @@ class alternate_list():
     
     def __eq__(self,b):
         return True if self.check_pair(self.a,b()) is None else False
-
-    def __iter__(self):
-        return iter(self.a)
-
-    def __repr__(self):
-        return repr(self.a)
 
     def __call__(self):
         return self.a
