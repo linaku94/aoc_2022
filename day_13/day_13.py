@@ -1,7 +1,5 @@
 from ast import literal_eval
 
-
-
 class alternate_list():
     def __init__(self, a):
         self.a = a
@@ -9,20 +7,17 @@ class alternate_list():
     def __lt__(self, b):
         if self.check_pair(self.a,b()) is True:
             return True
-        else:
-            return False
+        return False
     
     def __gt__(self,b):
         if self.check_pair(self.a,b()) is True:
             return False
-        else:
-            return True
+        return True
     
     def __eq__(self, b):
         if self.check_pair(self.a,b()) is None:
             return True
-        else:
-            return False
+        return False
 
     def __iter__(self):
         return iter(self.a)
