@@ -1,14 +1,11 @@
 from ast import literal_eval
 
 class alternate_list(list):
-    def __init__(self, a):
-        self.a = a
-    
     def __lt__(self, b):
-        return True if self.check_pair(self.a,b()) else False
+        return True if self.check_pair(self,b) else False
     
     def __gt__(self,b):
-        return False if self.check_pair(self.a,b()) else True
+        return False if self.check_pair(self,b) else True
 
     def __le__(self,b):
         return True if self<b or self==b else False
@@ -17,10 +14,7 @@ class alternate_list(list):
         return True if self>b or self==b else False
     
     def __eq__(self,b):
-        return True if self.check_pair(self.a,b()) is None else False
-
-    def __call__(self):
-        return self.a
+        return True if self.check_pair(self,b) is None else False
 
     @staticmethod
     def check_pair(p0, p1):
