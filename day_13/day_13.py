@@ -32,9 +32,9 @@ class alternate_list():
                     else:
                         p1[i] = [p1[i]]
                 if type(p0[i]) is list and type(p1[i]) is list:
-                    contr = alternate_list.check_pair(p0[i],p1[i])
-                    if contr != None:
-                        return contr                    
+                    compare = alternate_list.check_pair(p0[i],p1[i])
+                    if compare != None:
+                        return compare                    
                     continue
                 if p0[i]>p1[i]:
                     return False
@@ -42,9 +42,7 @@ class alternate_list():
                     return True
             except:
                 return False
-        if len(p0)==len(p1):
-            return None
-        return True
+        return None if len(p0)==len(p1) else True
 
 pairs = []
 indices = []
